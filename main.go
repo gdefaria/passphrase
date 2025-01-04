@@ -42,7 +42,7 @@ func generate(words []string, length int) ([]string, error) {
 
 func main() {
 	listName := flag.String("list", "eff-long", "Available wordlists: [eff-long] [bip39] [bip39-pt]")
-	length := flag.Int("length", 10, "Length (amount of words) of the passphrase")
+	length := flag.Int("len", 10, "Length (amount of words) of the passphrase")
 	flag.Parse()
 
 	if *length <= 0 {
