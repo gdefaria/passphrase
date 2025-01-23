@@ -16,7 +16,7 @@ var wordlists embed.FS
 
 func loadWordlist(listName string) ([]string, error) {
 	data, err := wordlists.ReadFile(fmt.Sprintf("wordlists/%s.txt", listName))
-	
+
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +58,7 @@ func main() {
 	pass, _ := generate(words, *length)
 	entropy := math.Log2(float64(len(words))) * float64(*length)
 
-	fmt.Printf("%s (%.2f bits)", strings.Join(pass, " "), entropy)
+	fmt.Printf("%s (%.2f bits)\n", strings.Join(pass, " "), entropy)
 
 	// Removing slice data from memory
 	defer func() {
